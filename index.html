@@ -56,6 +56,10 @@
       animation: appear 700ms cubic-bezier(.2, .8, .2, 1) both;
     }
 
+    nav { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.75rem; }
+    nav a { padding: 0.45rem 0.75rem; border-radius: 999px; color: var(--muted); font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+    nav a:hover, nav a[aria-current="page"] { color: var(--ink); background: rgba(255, 255, 255, 0.12); }
+
     .badge {
       display: inline-block;
       padding: 0.45rem 0.85rem;
@@ -111,6 +115,11 @@
 </head>
 <body>
   <main>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <span class="badge">A friendly beginning</span>
     <h1>Hello, World!</h1>
     <p>Every great idea starts somewhere. This is a small, beautiful first step.</p>
