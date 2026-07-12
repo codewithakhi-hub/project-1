@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A small gallery from Akhi" />
+  <title>Akhi's Gallery</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f7f7ff; --muted:#b9bad0; --panel:rgba(20,21,45,.72); }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; padding:3rem 1rem; font-family:Inter,ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:#101126; }
+    body::before, body::after { content:""; position:fixed; width:38rem; aspect-ratio:1; border-radius:50%; filter:blur(28px); opacity:.55; z-index:-1; animation:drift 12s ease-in-out infinite alternate; }
+    body::before { background:#5837d8; top:-15rem; left:-12rem; } body::after { background:#d7378c; right:-15rem; bottom:-16rem; animation-delay:-5s; }
+    main { width:min(92vw,980px); margin:auto; padding:clamp(1.5rem,5vw,3.5rem); background:var(--panel); border:1px solid rgba(255,255,255,.16); border-radius:28px; box-shadow:0 28px 80px rgba(0,0,0,.38); backdrop-filter:blur(18px); animation:appear 700ms cubic-bezier(.2,.8,.2,1) both; }
+    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:2.25rem; } nav a { padding:.45rem .75rem; border-radius:999px; color:var(--muted); font-size:.9rem; font-weight:700; text-decoration:none; } nav a:hover,nav a[aria-current="page"] { color:var(--ink); background:rgba(255,255,255,.12); }
+    header { text-align:center; margin-bottom:2rem; } .eyebrow { color:#ded9ff; font-size:.8rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; } h1 { margin:.65rem 0; font-size:clamp(3rem,9vw,5.5rem); letter-spacing:-.065em; background:linear-gradient(120deg,#fff 16%,#baabff 50%,#ff9dcd 84%); -webkit-background-clip:text; background-clip:text; color:transparent; } header p { margin:0; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; } .card { position:relative; min-height:190px; overflow:hidden; border:1px solid rgba(255,255,255,.14); border-radius:18px; background:#252653; } .card::before { content:""; position:absolute; inset:-25%; background:var(--art); filter:blur(2px); transform:rotate(var(--tilt)); } .card::after { content:""; position:absolute; inset:0; background:linear-gradient(transparent 44%,rgba(11,11,30,.8)); } .card span { position:absolute; z-index:1; left:1rem; bottom:.85rem; font-size:.9rem; font-weight:800; letter-spacing:.04em; } .one { --art:radial-gradient(circle at 28% 30%,#ffe49d 0 8%,transparent 9%),linear-gradient(140deg,#ff80bc,#742bc7 60%,#171b55); --tilt:-8deg; } .two { --art:radial-gradient(circle at 65% 35%,#b8fff3,transparent 28%),linear-gradient(45deg,#0a4564,#2d9a9e 48%,#b8e980); --tilt:6deg; } .three { --art:repeating-linear-gradient(120deg,#4c2c90 0 14px,#d94891 14px 28px,#ffb05e 28px 42px); --tilt:-11deg; } .four { --art:radial-gradient(ellipse at 50% 0,#b2aeff,transparent 44%),linear-gradient(150deg,#100d2d,#3953a3 54%,#74d9d1); --tilt:7deg; } .five { --art:conic-gradient(from 210deg at 50% 50%,#ffef9b,#f95c9d,#7948d5,#78e3e8,#ffef9b); --tilt:-5deg; } .six { --art:linear-gradient(135deg,#10132f 0 35%,#f3c1dc 35% 48%,#6223a3 48% 65%,#f8bd5c 65%); --tilt:5deg; }
+    @keyframes appear { from { opacity:0; transform:translateY(22px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } } @keyframes drift { to { transform:translate(6rem,4rem) scale(1.15); } } @media (max-width:650px) { .grid { grid-template-columns:repeat(2,1fr); } .card { min-height:155px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contact.html">Contact</a></nav>
+    <header><div class="eyebrow">A collection of color</div><h1>Gallery</h1><p>A few bright moments, gathered in one place.</p></header>
+    <section class="grid" aria-label="Artwork gallery">
+      <div class="card one"><span>Golden Hour</span></div><div class="card two"><span>Still Water</span></div><div class="card three"><span>Rhythm</span></div><div class="card four"><span>After Dark</span></div><div class="card five"><span>Bloom</span></div><div class="card six"><span>Daydream</span></div>
+    </section>
+  </main>
+</body>
+</html>
